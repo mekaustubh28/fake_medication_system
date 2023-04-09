@@ -1,7 +1,17 @@
+import Web3 from "web3";
+import { abi, networks } from "../../../build/contracts/ProductVerification.json"
+const web3 = new Web3(window.ethereum);
 $(document).ready(function() {
     // Your code here
 
-
+    let medicineID = $('#medicineID').value;
+    let button = document.getElementById('button')
+    medicineID = parseInt(medicineID)
+    $('#button').click(function (e) {  
+        const contract = new web3.eth.Contract(abi, networks[1680983828029].address);
+        const detail = contract.methods.returnDetails(medicineID).call();
+        console.log(detail);
+    });
     (function($) {
         $.fn.timeline = function() {
             var selectors = {

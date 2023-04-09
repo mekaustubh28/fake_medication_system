@@ -4,6 +4,8 @@ let signup = document.querySelector(".signup");
 let login = document.querySelector(".login");
 let slider = document.querySelector(".slider");
 let formSection = document.querySelector(".form-section");
+let submit = document.getElementById('submit');
+let password = document.getElementById('password');
 
 async function initWeb3() {
     if (window.ethereum) {
@@ -17,8 +19,6 @@ async function initWeb3() {
         console.log(contract, account);
         localStorage.setItem("networkId", networkId)
         localStorage.setItem("account", account)
-        localStorage.setItem("AuthOwnerHash", account)
-        console.log(typeof(localStorage.getItem("isAuthenticated")));
         document.getElementById('companyID').value = account;
         // return account;
     } else {
@@ -29,6 +29,13 @@ async function initWeb3() {
 
 initWeb3();
 
+
+submit.addEventListener('click', ()=>{
+    let passwordCheck = password.value;
+    if(passwordCheck == "Test@123"){
+        window.location.href = 'http://localhost:5173/pages/timeline.html';
+    }
+})
 signup.addEventListener("click", () => {
     slider.classList.add("moveslider");
     formSection.classList.add("form-section-move");

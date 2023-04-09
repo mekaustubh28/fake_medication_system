@@ -1,15 +1,22 @@
 <!DOCTYPE HTML>
 <html>
-
-<head>
-    <link rel="stylesheet" href="../css/timeline.css">
-    <title>Timeline Page</title>
+    
+    <head>
+        <link rel="stylesheet" href="../css/timeline.css">
+        <title>Timeline Page</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="module" src="../js/timeline.js"></script>
 
 </head>
 
 <body>
     <div class="timeline-container" id="timeline-1">
         <div class="timeline-header">
+            <label for="medicinID" style="color: white;margin-right: 20px;">Medicine ID</label>
+            <input type="text" id="medicinID" style="height: 30px;width: 200px;margin-bottom: 40px;">
+            <a href="#" id="button" style="text-decoration: none; color: white; border: 1px solid white; padding: 7px;margin-left: 20px;">Check</a>
+            <a href="./details.html" id="addYours" style="font-size: 20px;margin-right: 40px;float: right;text-decoration: none; color: white; border: 1px solid white; padding: 7px;margin-left: 20px;">Add Yours</a>
+
             <h1 class="timeline-header__title">PharmaTrack</h1>
             <h2 class="timeline-header__subtitle">From the Source to Your Shelf: Tracking Medicine Origins for a Safer World</h2>
             <br>
@@ -64,8 +71,6 @@
         </div>
     </div>
     <a href="./details.html">click</a>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="module" src="../js/timeline.js"></script>
 </body>
 
 </html>
